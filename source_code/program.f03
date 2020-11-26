@@ -240,7 +240,7 @@ Contains
     skv_t = sku_quench(SkI_t,SkF_t,alphaku_t,ua_val)
     !Calculating initial diffussion
     If (writting_op .eqv. .True.) then
-      call file_open_HSSW_quench_mobility_1(sys_i,s_params_i,folder,id,units,0)
+      call file_open_HSSW_quench_mobility_1(sys_i,s_params_i,folder_kinetics,id,units,0)
     End If
     s_arrays(3,:)   = SkI
     s_w_arrays(2,:) = SkI_t
@@ -251,7 +251,7 @@ Contains
       call efh_HSSW_quench_mobility(kv,skI,kwv,units,sys_i,s_params_i,sys_approx_i,Dl_I,gam_val,kc)
     End If
     If (writting_op .eqv. .True.) Then
-      call file_open_HSSW_quench_mobility_1(sys_f,s_params_f,folder,id,units,999)
+      call file_open_HSSW_quench_mobility_1(sys_f,s_params_f,folder_kinetics,id,units,999)
     End If
     s_arrays(3,:)   = skv
     s_w_arrays(2,:) = skv_t
