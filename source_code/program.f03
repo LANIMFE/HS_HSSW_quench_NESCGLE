@@ -96,7 +96,7 @@ Contains
     Real * 8 :: uw, energy, press, energy_ua, press_ua
     folder= "data/"
     folder_mobility="data/"
-    folder= "data/kinetics/"
+    folder_kinetics= "data/kinetics/"
     !swlambda = 1.5d0
     d = 3
     ikp = 4
@@ -257,7 +257,7 @@ Contains
     s_w_arrays(2,:) = skv_t
     Print*, "Calculating Final state dynamics"
     !call SCGLE_dynamics(dyn_p,s_arrays,Dl_F,writting_op,s_w_arrays,dyn_w_arrays,dyn_units)
-    call Long_t_dynamics_Dl_convergence(dyn_p,s_arrays,Dl_F,.True.,s_w_arrays,dyn_units)
+    call Long_t_dynamics_Dl_convergence(dyn_p,s_arrays,Dl_F,writting_op,s_w_arrays,dyn_units)
     If (Dl_F < 1.d-6) Dl_F = 1.d-6
     If (writting_op .eqv. .True.) Then
       call efh_HSSW_quench_mobility(kv,skv,kwv,units,sys_f,s_params_f,sys_approx,Dl_F,gam_val,kc)
@@ -311,7 +311,7 @@ Contains
         call file_open_HSSW_quench_mobility_1(sys_f,s_params_f,folder_kinetics,id,units,u_count)
         s_arrays(3,:)   = Skv
         s_w_arrays(2,:) = Skv_t
-        call Long_t_dynamics_Dl_convergence(dyn_p,s_arrays,Dl_tw,.True.,s_w_arrays,dyn_units)
+        call Long_t_dynamics_Dl_convergence(dyn_p,s_arrays,Dl_tw,writting_op,s_w_arrays,dyn_units)
         call efh_HSSW_quench_mobility(kv,skv,kwv,units,sys_f,s_params_f,sys_approx,Dl_tw,gam_val,kc)
         tw_w_p = tw_w_1 + dtw_w_1
         Print*, "For the values: u_w=",u_w,"tw_approx=", tw_w_p
