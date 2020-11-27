@@ -25,7 +25,7 @@ in your terminal for the ones you are missing:
 "apt-get gcc"
 "apt-get gfortran"
 
-internet connection is needed. If you do not have acces to the apt utility then look at the official websites of the tools for installation guides.
+internet connection is needed. If you do not have access to the apt utility then look at the official websites of the tools for installation guides.
 
 ***********************************
 
